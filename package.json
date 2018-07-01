@@ -1,0 +1,25 @@
+{
+  "name": "michaelkolber.github.io",
+  "version": "1.0.1",
+  "description": "My website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelkolber/michaelkolber.github.io.git"
+  },
+  "author": "Michael Kolber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelkolber/michaelkolber.github.io/issues"
+  },
+  "homepage": "https://github.com/michaelkolber/michaelkolber.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
