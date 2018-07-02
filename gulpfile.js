@@ -1,10 +1,10 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('serve', ['css'], function() {
-
+gulp.task('serve', function() {
     browserSync.init({
         server: "./"
     });
@@ -13,8 +13,11 @@ gulp.task('serve', ['css'], function() {
 });
 
 gulp.task('css', function () {
-    return gulp.src('./scss/styles.scss')
+    return gulp
+        .src('./scss/styles.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))

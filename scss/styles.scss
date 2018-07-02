@@ -1,1 +1,41 @@
 @import '_normalize';
+
+/***************************************/
+/************ GLOBAL STYLES ************/
+/***************************************/
+
+:root {
+    font-family: 'Arial', sans-serif;
+}
+
+
+/***************************************/
+/********** COMPONENT STYLES ***********/
+/***************************************/
+
+.spacer {
+    &--130 {
+        height: 130px;
+        width: 100%;
+    }
+}
+
+
+/***************************************/
+/************ CONTENT STYLES ***********/
+/***************************************/
+
+.intro {
+    &__header {
+        font-size: 2.75rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    &__tagline {
+        color: hsla(33, 16%, 43%, 1);
+        margin-top: 0;
+        font-size: 1.25rem;
+        text-align: center;
+    }
+}
