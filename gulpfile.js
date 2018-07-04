@@ -1,8 +1,10 @@
 var gulp = require('gulp');
+
+var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
+var postcss = require('gulp-postcss');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('serve', function() {
     browserSync.init({
@@ -13,14 +15,18 @@ gulp.task('serve', function() {
 });
 
 gulp.task('css', function () {
+    var plugins = [
+        autoprefixer({
+            browsers: ['last 2 versions']
+        })
+    ];
+
     return gulp
         .src('./scss/styles.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass.sync().on('error', sass.logError))
+            .pipe(sass.sync().on('error', sass.logError))
+            .pipe(postcss(plugins))
         .pipe(sourcemaps.write())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions']
-        }))
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 });

@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/michaelkolber/michaelkolber.github.io#readme",
   "devDependencies": {
+    "autoprefixer": "^8.6.4",
     "browser-sync": "^2.24.5",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
   }
