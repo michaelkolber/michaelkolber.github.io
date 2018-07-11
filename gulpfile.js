@@ -8,9 +8,10 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('serve', function() {
     browserSync.init({
-        server: "./"
+        server: true
     });
 
+    gulp.watch("scss/styles.scss", ['css']);
     gulp.watch("index.html").on('change', browserSync.reload);
 });
 
@@ -31,8 +32,4 @@ gulp.task('css', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./scss/styles.scss', ['css']);
-});
-
-gulp.task('default', ['css', 'sass:watch', 'serve']);
+gulp.task('default', ['serve']);

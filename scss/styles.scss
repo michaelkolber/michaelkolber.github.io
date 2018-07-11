@@ -11,7 +11,17 @@
 /***************************************/
 
 :root {
+    color: hsl(0, 0%, 23%);
     font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 
@@ -26,22 +36,62 @@
     }
 }
 
+.header {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.subheader {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.text {
+    max-width: 37rem;
+}
 
 /***************************************/
 /************ CONTENT STYLES ***********/
 /***************************************/
 
 .intro {
-    &__header {
-        font-size: 2.75rem;
-        margin-bottom: 0;
-        text-align: center;
-    }
+    margin-top: 160px;
 
     &__tagline {
-        color: hsla(33, 16%, 43%, 1);
+        color: #3d3a67;
         margin-top: 0;
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         text-align: center;
     }
 }
+
+.nav {
+    display: flex;
+    margin-top: 130px;
+    justify-content: center;
+
+    &__item {
+        color: inherit;
+        margin: 0 20px;
+        text-decoration-color: #7cbeff;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #7cbeff;
+        }
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+
+    &__small-header, &__list {
+        margin-left: 20px;
+    }
+}
+
+// TODO: Individually color language names
+// TODO: Fix gulp reloading CSS twice
