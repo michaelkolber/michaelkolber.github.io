@@ -4,7 +4,7 @@
 // F8C444
 // F59725
 // D84929
-@import '_normalize';
+@import 'normalize';
 
 /***************************************/
 /************ GLOBAL STYLES ************/
@@ -59,22 +59,23 @@ h1 {
 
     &__tagline {
         color: #3d3a67;
-        margin-top: 0;
         font-size: 1.125rem;
+        margin-top: 0;
         text-align: center;
     }
 }
 
 .nav {
     display: flex;
-    margin-top: 130px;
+    flex-wrap: wrap;
     justify-content: center;
+    margin-top: 130px;
 
     &__item {
         color: inherit;
         margin: 0 20px;
         text-decoration-color: #7cbeff;
-        transition: color 0.2s;
+        transition: color .2s;
 
         &:hover {
             color: #7cbeff;
@@ -83,9 +84,9 @@ h1 {
 }
 
 .about {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 130px;
 
     &__small-header, &__list {
