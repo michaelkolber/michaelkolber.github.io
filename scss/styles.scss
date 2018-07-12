@@ -75,6 +75,7 @@ section,
     }
 }
 
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +94,7 @@ section,
     }
 }
 
+
 .about {
     align-items: center;
     display: flex;
@@ -101,31 +103,70 @@ section,
 }
 
 .language {
-    &--html {
-        color: #e44b23;
+    &--html       {color: #e44b23;}
+    &--css        {color: #563d7c;}
+    &--sass       {color: #c69;}
+    &--python     {color: #3572a5;}
+    &--cpp        {color: #f34b7d;}
+    &--javascript {color: #f1e05a;}
+    &--java       {color: #b07219;}
+}
+
+
+.work {
+    &-gallery {
+        margin: 2rem auto;
     }
 
-    &--css {
-        color: #563d7c;
-    }
+    &-item {
+        background: no-repeat center/110%; // sass-lint:disable-line space-around-operator
+        background-color: $secondary;
+        border-radius: 4px;
+        height: 210px;  // sass-lint:disable-line property-units
+        position: relative;
+        transition: background-size $transition-eo;
 
-    &--sass {
-        color: #c69;
-    }
+        &-wrapper:hover & { // sass-lint:disable-line force-pseudo-nesting
+            background-size: 100%;
+        }
 
-    &--python {
-        color: #3572a5;
-    }
+        &-wrapper {
+            color: inherit;
+            display: block;
+            text-decoration: none;
+            width: 320px; // sass-lint:disable-line property-units
+        }
 
-    &--cpp {
-        color: #f34b7d;
-    }
+        &__overlay {
+            background-color: rgba(0, 0, 0, .6);
+            border-radius: 4px;
+            color: white;
+            display: table;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            padding: 2.5rem;
+            position: absolute;
+            top: 0;
+            transition: opacity $transition;
 
-    &--javascript {
-        color: #f1e05a;
-    }
+            .work-item-wrapper:hover & { // sass-lint:disable-line force-pseudo-nesting
+                opacity: 1;
+            }
+        }
 
-    &--java {
-        color: #b07219;
+        &__description {
+            display: inline-block; // For old IE support
+            display: table-cell; // sass-lint:disable-line no-duplicate-properties
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        &__name {
+            &-wrapper {
+                margin: 1rem 0;
+                text-align: center;
+            }
+        }
     }
 }
