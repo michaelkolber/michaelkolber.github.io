@@ -46,6 +46,7 @@ rules:
       - 1
       -
           global: ['rem', 's']
+          per-property: {border-radius: ['px']}
 
   # Nesting
   declarations-before-nesting: 1
