@@ -4,24 +4,29 @@
 // F8C444
 // F59725
 // D84929
+@import 'variables';
 @import 'normalize';
+@import 'dev-styles';
 
 /***************************************/
 /************ GLOBAL STYLES ************/
 /***************************************/
 
 :root {
-    color: hsl(0, 0%, 23%);
+    color: $text;
     font-family: 'Arial', sans-serif;
-    font-size: 18px;
-}
-
-p {
-    margin: 0;
+    font-size: 18px; // sass-lint:disable-line property-units
 }
 
 h1 {
     font-size: 2.5rem;
+}
+
+section,
+.limit-width {
+    margin: 0 auto;
+    max-width: 37rem;
+    padding: 0 .5rem;
 }
 
 
@@ -29,25 +34,31 @@ h1 {
 /********** COMPONENT STYLES ***********/
 /***************************************/
 
-.spacer {
-    &--130 {
-        height: 130px;
-        width: 100%;
-    }
-}
-
 .header {
     margin-bottom: 0;
     text-align: center;
+
+    &__name {
+        color: $primary;
+    }
 }
 
 .subheader {
+    // color: $primary;
     text-align: center;
     text-decoration: underline;
 }
 
+.small-header {
+    color: $secondary;
+}
+
 .text {
     max-width: 37rem;
+}
+
+.full-width {
+    max-width: inherit;
 }
 
 /***************************************/
@@ -55,12 +66,11 @@ h1 {
 /***************************************/
 
 .intro {
-    margin-top: 160px;
+    margin-top: 9rem;
 
     &__tagline {
         color: #3d3a67;
         font-size: 1.125rem;
-        margin-top: 0;
         text-align: center;
     }
 }
@@ -69,11 +79,11 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 130px;
+    margin: 7rem 0;
 
     &__item {
         color: inherit;
-        margin: 0 20px;
+        padding: 1.125rem;
         text-decoration-color: #7cbeff;
         transition: color .2s;
 
@@ -87,12 +97,35 @@ h1 {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 130px;
-
-    &__small-header, &__list {
-        margin-left: 20px;
-    }
+    margin: 2rem auto;
 }
 
-// TODO: Individually color language names
-// TODO: Fix gulp reloading CSS twice
+.language {
+    &--html {
+        color: #e44b23;
+    }
+
+    &--css {
+        color: #563d7c;
+    }
+
+    &--sass {
+        color: #c69;
+    }
+
+    &--python {
+        color: #3572a5;
+    }
+
+    &--cpp {
+        color: #f34b7d;
+    }
+
+    &--javascript {
+        color: #f1e05a;
+    }
+
+    &--java {
+        color: #b07219;
+    }
+}

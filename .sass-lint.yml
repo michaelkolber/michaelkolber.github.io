@@ -42,7 +42,10 @@ rules:
   no-url-protocols: 1
   no-vendor-prefixes: 1
   no-warn: 1
-  property-units: 0
+  property-units:
+      - 1
+      -
+          global: ['rem', 's']
 
   # Nesting
   declarations-before-nesting: 1

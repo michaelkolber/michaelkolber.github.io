@@ -8,7 +8,7 @@
 
 <body>
     <section class="intro">
-        <h1 class="header">I am Michael Kolber.</h1>
+        <h1 class="header">I am <span class="header__name">Michael Kolber.</span></h1>
         <p class="intro__tagline">Web developer, designer, computer hobbyist</p>
     </section>
 
@@ -22,20 +22,36 @@
     <section id="about" class="about">
         <h2 class="subheader">About</h2>
         <div class="text about__text">
-            I am a college student studying computer science and graphic design.
-            I have a few years of experience with web design and development, and
-            have been tinkering with hardware since I was a kid. Nowadays I mostly
-            work on web-based projects.
+            <p>
+                I am a college student studying computer science and graphic design.
+                I have a few years of experience with web design and development, and
+                have been tinkering with hardware since I was a kid. Nowadays I mostly
+                work on web-based projects.
+            </p>
 
-            <h3 class="about__small-header">Languages I am familiar with:</h3>
+            <h3 class="small-header">Languages I am familiar with (in approximate order of familiarity):</h3>
             <ul class="about__list">
-                <li>HTML/CSS</li>
-                <li>Sass</li>
-                <li>Python</li>
-                <li>C++</li>
-                <li>Javascript</li>
-                <li>Java</li>
+                <li><span class="language--html">HTML</span>/<span class="language--css">CSS</span></li>
+                <li><span class="language--sass">Sass</span></li>
+                <li><span class="language--python">Python</span></li>
+                <li><span class="language--cpp">C++</span></li>
+                <li><span class="language--javascript">Javascript</span></li>
+                <li><span class="language--java">Java</span></li>
             </ul>
+        </div>
+    </section>
+
+    <section id="work" class="work">
+        <h2 class="subheader">Work</h2>
+        <div class="work-gallery">
+            <div class="work-item">
+                <span class="work-item__name">Word Clock</span>
+                <div class="work-item__overlay">
+                    <p class="work-item__description">
+                        A JavaScript clock that tells time using words.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
