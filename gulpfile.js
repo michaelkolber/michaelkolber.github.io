@@ -11,7 +11,7 @@ gulp.task('serve', function() {
         server: true
     });
 
-    gulp.watch("scss/styles.scss", ['css']);
+    gulp.watch("scss/*.scss", ['css']);
     gulp.watch("index.html").on('change', browserSync.reload);
 });
 
@@ -23,12 +23,12 @@ gulp.task('css', function () {
     ];
 
     return gulp
-        .src('./scss/styles.scss')
+        .src('./scss/*.scss')
         .pipe(sourcemaps.init())
             .pipe(sass.sync().on('error', sass.logError))
             .pipe(postcss(plugins))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream());
 });
 
