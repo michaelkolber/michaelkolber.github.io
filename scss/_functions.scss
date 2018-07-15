@@ -1,0 +1,9 @@
+@mixin mq($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @conent
+    }
+}
+
+@function trans($property, $time: .2s, $effect: ease-in-out) {
+    @return $property $time $effect;
+}
