@@ -8,19 +8,21 @@
 
 <body>
     <section class="intro">
-        <h1 class="header">I am <span class="header__name">Michael Kolber.</span></h1>
-        <p class="intro__tagline">Web developer, designer, computer hobbyist</p>
+        <div class="intro__content-wrapper">
+            <h1 class="header">Hey, I'm <span class="header__name">Michael Kolber</span>.</h1>
+            <p class="intro__tagline">Web developer, designer, computer hobbyist</p>
+
+            <nav class="nav">
+                <a class="nav__item" href="#about">About</a>
+                <a class="nav__item" href="#work">Work</a>
+                <a class="nav__item" href="https://github.com/michaelkolber">GitHub</a>
+                <a class="nav__item" href="#contact">Contact</a>
+            </nav>
+        </div>
     </section>
 
-    <nav class="nav">
-        <a class="nav__item" href="#about">About</a>
-        <a class="nav__item" href="#work">Work</a>
-        <a class="nav__item" href="https://github.com/michaelkolber">GitHub</a>
-        <a class="nav__item" href="#contact">Contact</a>
-    </nav>
-
     <section id="about" class="about">
-        <h2 class="subheader">About</h2>
+        <h2 class="header header--subheader">About</h2>
         <div class="text about__text">
             <p>
                 I am a college student studying computer science and graphic design.
@@ -29,7 +31,7 @@
                 work on web-based projects.
             </p>
 
-            <h3 class="small-header">Languages I am familiar with (in approximate order of familiarity):</h3>
+            <h3 class="header header--small-header">Languages I am familiar with (in approximate order of familiarity):</h3>
             <ul class="about__list">
                 <li><span class="language--html">HTML</span>/<span class="language--css">CSS</span></li>
                 <li><span class="language--sass">Sass</span></li>
@@ -42,9 +44,9 @@
     </section>
 
     <section id="work" class="work">
-        <h2 class="subheader">Work</h2>
+        <h2 class="header header--subheader">Work</h2>
         <div class="work-gallery">
-            <a class="work-item-wrapper" href="/word-clock">
+            <a class="work-item-wrapper" href="/word-clock/">
                 <div class="work-item" style="background-image: url('assets/images/work-item_word-clock.png')">
                     <div class="work-item__overlay">
                         <p class="work-item__description">
@@ -54,7 +56,30 @@
                 </div>
                 <div class="work-item__name-wrapper"><span class="work-item__name">Word Clock</span></div>
             </a>
+
+            <a class="work-item-wrapper" href="https://www.letstalkpython.com/">
+                <div class="work-item" style="background-image: url('assets/images/work-item_ltp-site.png')">
+                    <div class="work-item__overlay">
+                        <p class="work-item__description">
+                            A website for the Let's Talk Python college club.
+                        </p>
+                    </div>
+                </div>
+                <div class="work-item__name-wrapper"><span class="work-item__name">Let's Talk Python Website</span></div>
+            </a>
+
+            <a class="work-item-wrapper" href="/whatsapp-viewer/">
+                <div class="work-item" style="background-image: url('assets/images/work-item_wa-viewer.png')">
+                    <div class="work-item__overlay">
+                        <p class="work-item__description">
+                            A website that lets you view your exported WhatsApp chats in an easy-to-read fashion (unmaintained).
+                        </p>
+                    </div>
+                </div>
+                <div class="work-item__name-wrapper"><span class="work-item__name">WhatsApp Viewer</span></div>
+            </a>
         </div>
+        <a class="button github-button" href="https://github.com/michaelkolber"><img class="github-button__icon" src="assets/images/GitHub-Mark-64px.png" alt="GitHub logo">See more on GitHub</a>
     </section>
 
 </body>

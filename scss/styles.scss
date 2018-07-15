@@ -5,6 +5,7 @@
 // F59725
 // D84929
 @import 'variables';
+@import 'functions';
 @import 'normalize';
 @import 'dev-styles';
 
@@ -15,7 +16,7 @@
 :root {
     color: $text;
     font-family: 'Arial', sans-serif;
-    font-size: 18px; // sass-lint:disable-line property-units
+    // font-size: 18px; // sass-lint:disable-line property-units
 }
 
 h1 {
@@ -26,7 +27,7 @@ section,
 .limit-width {
     margin: 0 auto;
     max-width: 37rem;
-    padding: 0 .5rem;
+    padding: 2rem .5rem;
 }
 
 
@@ -34,31 +35,52 @@ section,
 /********** COMPONENT STYLES ***********/
 /***************************************/
 
+.button {
+    border: 1px solid $link;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1rem;
+    transition: trans(background-color), trans(color);
+
+    @at-root a#{&} {
+        color: $link;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $link;
+        color: white;
+    }
+}
+
+.full-width {
+    max-width: inherit;
+}
+
 .header {
     margin-bottom: 0;
     text-align: center;
 
     &__name {
-        color: $primary;
+        color: $link;
+    }
+
+    &--subheader {
+        margin-bottom: 0;
+        text-decoration: underline;
+        text-decoration-color: $link;
+    }
+
+    &--small-header {
+        color: $secondary;
+        font-size: 1rem;
+        text-align: left;
     }
 }
 
-.subheader {
-    // color: $primary;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.small-header {
-    color: $secondary;
-}
 
 .text {
     max-width: 37rem;
-}
-
-.full-width {
-    max-width: inherit;
 }
 
 /***************************************/
@@ -66,10 +88,27 @@ section,
 /***************************************/
 
 .intro {
-    margin-top: 9rem;
+    background-color: #3e4860;
+    box-sizing: border-box;
+    color: white;
+    display: table;
+    height: 100vh;
+    max-width: none;
+    padding: 2rem 1rem;
+    width: 100%;
+
+    &__content-wrapper {
+        display: inline-block;
+        display: table-cell; //sass-lint:disable-line no-duplicate-properties
+        vertical-align: middle;
+    }
+
+    .header {
+        margin: 0;
+    }
 
     &__tagline {
-        color: #3d3a67;
+        // color: #3d3a67;
         font-size: 1.125rem;
         text-align: center;
     }
@@ -80,7 +119,7 @@ section,
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 7rem 0;
+    margin: 7rem 0 0;
 
     &__item {
         color: inherit;
@@ -99,7 +138,6 @@ section,
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
 }
 
 .language {
@@ -114,7 +152,13 @@ section,
 
 
 .work {
+    max-width: 65rem;
+    text-align: center;
+
     &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         margin: 2rem auto;
     }
 
@@ -123,6 +167,7 @@ section,
         background-color: $secondary;
         border-radius: 4px;
         height: 210px;  // sass-lint:disable-line property-units
+        overflow: hidden;
         position: relative;
         transition: background-size $transition-eo;
 
@@ -158,6 +203,8 @@ section,
         &__description {
             display: inline-block; // For old IE support
             display: table-cell; // sass-lint:disable-line no-duplicate-properties
+            font-size: 1.2rem;
+            line-height: 1.5;
             text-align: center;
             vertical-align: middle;
         }
@@ -169,4 +216,15 @@ section,
             }
         }
     }
+}
+
+.github-button {
+    // sass-lint:disable property-units
+    &__icon {
+        height: 1em;
+        padding-right: .5em;
+        position: relative;
+        top: 2px;
+    }
+    // sass-lint:enable property-units
 }
