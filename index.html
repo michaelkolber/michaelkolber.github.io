@@ -7,8 +7,6 @@
 </head>
 
 <body>
-    <script src="assets/js/sticky-menu.js"></script>
-
     <header class="intro">
         <div class="intro__content-wrapper">
             <h1 class="header">Hey, I'm <span class="header__name">Michael Kolber</span>.</h1>
@@ -81,16 +79,39 @@
                 <div class="work-item__name-wrapper"><span class="work-item__name">WhatsApp Viewer</span></div>
             </a>
         </div>
-        <a class="button github-button" href="https://github.com/michaelkolber"><img class="github-button__icon" src="assets/images/GitHub-Mark-64px.png" alt="GitHub logo">See more on GitHub</a>
+        <a class="button button--outline button--github" href="https://github.com/michaelkolber">
+            <img class="button--github__icon" src="assets/images/GitHub-Mark-64px.png" alt="GitHub logo">
+            See more on GitHub
+        </a>
     </section>
 
     <section id="contact" class="contact">
         <h2 class="header header--subheader">Contact Me</h2>
+        <p class="contact__text">
+            Just submit this form and I'll get back to you as soon as I can!
+        </p>
+
+        <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/michaelkolber.com@gmail.com" method="POST">
+                <input class="contact-form__field" type="email" name="_replyto" placeholder="Your Email">
+                <input class="contact-form__field" name="_subject" placeholder="Subject">
+                <textarea  class="contact-form__field contact-form__field--textarea" name="message" placeholder="Message"></textarea>
+                <input id="contact-form__submit" class="contact-form__submit" type="submit" value="Send">
+            </form>
+<!--
+            <div class="contact-form__overlay">
+                <p>
+                    Success! I'll get back to you as soon as possible, thanks for your patience.
+                </p>
+            </div> -->
+        </div>
     </section>
 
     <footer class="footer">
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

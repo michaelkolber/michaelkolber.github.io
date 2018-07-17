@@ -36,20 +36,30 @@ section,
 /***************************************/
 
 .button {
-    border: 1px solid $primary;
+    background-color: $primary;
     border-radius: 4px;
+    color: white;
     display: inline-block;
     padding: 1rem;
     transition: trans(background-color), trans(color);
 
     @at-root a#{&} {
-        color: $primary;
         text-decoration: none;
     }
 
     &:hover {
-        background-color: $primary;
-        color: white;
+        background-color: $primary-lightened;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: white;
+        }
     }
 }
 
@@ -228,7 +238,7 @@ section,
     }
 }
 
-.github-button {
+.button--github {
 
     // sass-lint:disable property-units
     &__icon {
@@ -240,4 +250,77 @@ section,
         vertical-align: text-top;
     }
     // sass-lint:enable property-units
+}
+
+.contact {
+    &__text {
+        margin: .5rem 0 0;
+        text-align: center;
+    }
+}
+
+.contact-form-wrapper {
+    margin-top: .5rem;
+    padding: .5rem 0;
+    position: relative;
+}
+
+.contact-form {
+
+    &__field {
+        border: 2px solid $primary;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        margin: 1rem auto;
+        max-width: 25rem;
+        min-height: 3rem;
+        padding: 0 .5rem;
+        transition: trans(border-color);
+        width: 100%;
+
+        &:focus {
+            border-color: $secondary;
+            outline: none;
+        }
+
+        &--textarea {
+            padding: .5rem;
+        }
+    }
+
+    &__submit {
+        @extend .button; // sass-lint:disable-line placeholder-in-extend
+
+        border: none;
+        display: block;
+        margin: 0 auto;
+        padding: .75rem 1.25rem;
+    }
+    //
+    // &__overlay {
+    //     background-color: hsla(222, 22%, 31%, .95);
+    //     border-radius: 4px;
+    //     color: white;
+    //     display: table;
+    //     height: 100%;
+    //     left: 0;
+    //     // opacity: 0;
+    //     position: absolute;
+    //     top: 0;
+    //     transition: trans(opacity), trans(visibility);
+    //     // visibility: hidden;
+    //     width: 100%;
+    //
+    //     &--visible {
+    //         opacity: 1;
+    //         visibility: visible;
+    //     }
+    //
+    //     p {
+    //         display: inline-block;
+    //         display: table-cell;
+    //         vertical-align: middle;
+    //     }
+    // }
 }
