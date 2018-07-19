@@ -1,0 +1,362 @@
+// colors:
+// 1C8AA1
+// F3F0CA
+// F8C444
+// F59725
+// D84929
+@import 'variables';
+@import 'functions';
+@import 'normalize';
+@import 'dev-styles';
+
+/***************************************/
+/************ GLOBAL STYLES ************/
+/***************************************/
+
+:root {
+    color: $primary;
+    font-family: 'Arial', sans-serif;
+    // font-size: 18px; // sass-lint:disable-line property-units
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+section,
+.limit-width {
+    margin: 0 auto;
+    max-width: 37rem;
+    padding: 3rem .5rem 1rem;
+}
+
+a {
+    color: inherit;
+    padding: .575rem 0;
+    text-decoration-color: #7cbeff;
+    transition: color .2s;
+
+    &:hover {
+        color: #7cbeff;
+    }
+}
+
+
+/***************************************/
+/********** COMPONENT STYLES ***********/
+/***************************************/
+
+.button {
+    background-color: $primary;
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    padding: 1rem;
+    transition: trans(background-color), trans(color);
+
+    @at-root a#{&} {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $primary-lightened;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: white;
+        }
+    }
+}
+
+.full-width {
+    max-width: inherit;
+}
+
+.header {
+    margin-bottom: 0;
+    text-align: center;
+
+    &__name {
+        color: $secondary;
+    }
+
+    &__linebreak {
+        display: none;
+
+        @include mq($bp-lg) {
+            display: initial;
+        }
+    }
+
+    &--subheader {
+        margin: 1rem 0 0;
+        text-decoration: underline;
+        text-decoration-color: $secondary;
+    }
+
+    &--small {
+        color: $secondary;
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+
+.text {
+    max-width: 37rem;
+}
+
+/***************************************/
+/************ CONTENT STYLES ***********/
+/***************************************/
+
+.intro {
+    background-color: $primary;
+    box-sizing: border-box;
+    color: white;
+    display: table;
+    height: 100vh;
+    max-width: none;
+    padding: 2rem 1rem;
+    width: 100%;
+
+    &__content-wrapper {
+        display: inline-block;
+        display: table-cell; //sass-lint:disable-line no-duplicate-properties
+        vertical-align: middle;
+    }
+
+    .header {
+        margin: 0;
+    }
+
+    &__tagline {
+        // color: #3d3a67;
+        font-size: 1.125rem;
+        text-align: center;
+    }
+}
+
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 7rem 0 0;
+
+    &--sticky {
+        background-color: $primary;
+        left: 0;
+        margin-top: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 4000;
+    }
+
+    &__item {
+        padding: 1.125rem;
+
+        @include mq($bp-md) {
+            padding: 1.125rem .5625rem;
+        }
+
+        @include mq($bp-sm) {
+            padding: 1.125rem .25rem;
+        }
+    }
+}
+
+
+.about {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.language {
+    &--html       {color: #e44b23;}
+    &--css        {color: #563d7c;}
+    &--sass       {color: #c69;}
+    &--python     {color: #3572a5;}
+    &--cpp        {color: #f34b7d;}
+    &--javascript {color: #f1e05a;}
+    &--java       {color: #b07219;}
+}
+
+
+.work {
+    max-width: 65rem;
+    text-align: center;
+
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 2rem auto;
+    }
+
+    &-item {
+        background: no-repeat center/110%; // sass-lint:disable-line space-around-operator
+        background-color: $secondary;
+        border-radius: 4px;
+        height: 210px;  // sass-lint:disable-line property-units
+        overflow: hidden;
+        position: relative;
+        transition: background-size $transition-eo;
+
+        &-wrapper:hover & { // sass-lint:disable-line force-pseudo-nesting
+            background-size: 100%;
+        }
+
+        &-wrapper {
+            color: inherit;
+            display: block;
+            margin: 0 .5rem;
+            text-decoration: none;
+            width: 320px; // sass-lint:disable-line property-units
+        }
+
+        &__overlay {
+            background-color: rgba(0, 0, 0, .6);
+            border-radius: 4px;
+            color: white;
+            display: table;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            padding: 2.5rem;
+            position: absolute;
+            top: 0;
+            transition: opacity $transition;
+
+            .work-item-wrapper:hover & { // sass-lint:disable-line force-pseudo-nesting
+                opacity: 1;
+            }
+        }
+
+        &__description {
+            display: inline-block; // For old IE support
+            display: table-cell; // sass-lint:disable-line no-duplicate-properties
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        &__name {
+            &-wrapper {
+                margin: 1rem 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.button--github {
+
+    // sass-lint:disable property-units
+    &__icon {
+        background-color: white;
+        border-radius: 4rem;
+        height: 1em;
+        margin-right: .4em;
+        padding: .1rem;
+        vertical-align: text-top;
+    }
+    // sass-lint:enable property-units
+}
+
+.contact {
+    &__text {
+        margin: .5rem 0 0;
+        text-align: center;
+    }
+}
+
+.contact-form-wrapper {
+    margin-top: .5rem;
+    padding: .5rem 0;
+    position: relative;
+}
+
+.contact-form {
+
+    &__field {
+        border: 2px solid $primary;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        margin: 1rem auto;
+        max-width: 25rem;
+        min-height: 3rem;
+        padding: 0 .5rem;
+        transition: trans(border-color);
+        width: 100%;
+
+        &:focus {
+            border-color: $secondary;
+            outline: none;
+        }
+
+        &--textarea {
+            padding: .5rem;
+        }
+    }
+
+    &__submit {
+        @extend .button; // sass-lint:disable-line placeholder-in-extend
+
+        border: none;
+        display: block;
+        margin: 0 auto;
+        padding: .75rem 1.25rem;
+    }
+    //
+    // &__overlay {
+    //     background-color: hsla(222, 22%, 31%, .95);
+    //     border-radius: 4px;
+    //     color: white;
+    //     display: table;
+    //     height: 100%;
+    //     left: 0;
+    //     // opacity: 0;
+    //     position: absolute;
+    //     top: 0;
+    //     transition: trans(opacity), trans(visibility);
+    //     // visibility: hidden;
+    //     width: 100%;
+    //
+    //     &--visible {
+    //         opacity: 1;
+    //         visibility: visible;
+    //     }
+    //
+    //     p {
+    //         display: inline-block;
+    //         display: table-cell;
+    //         vertical-align: middle;
+    //     }
+    // }
+}
+
+.linkedin-shoutout {
+    text-align: center;
+}
+
+.footer {
+    background-color: $primary;
+    color: white;
+    min-height: 2rem;
+    padding: 1rem;
+
+    &__text {
+        text-align: right;
+    }
+}
