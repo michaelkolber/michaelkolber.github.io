@@ -274,9 +274,29 @@ a {
 }
 
 .contact {
+
+    &--submit-success {
+
+        &__text {
+            background-color: #5cb85c;
+            border-radius: 4px;
+            color: white;
+            display: none;
+            padding: .75rem;
+
+            &--visible {
+                display: block;
+            }
+        }
+    }
+
     &__text {
-        margin: .5rem 0 0;
+        margin: 1.5rem 0 0;
         text-align: center;
+
+        &--hidden {
+            display: none;
+        }
     }
 }
 
@@ -347,6 +367,7 @@ a {
 }
 
 .linkedin-shoutout {
+    font-weight: 600;
     text-align: center;
 }
 

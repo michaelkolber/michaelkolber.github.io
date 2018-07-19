@@ -24,26 +24,38 @@ $(window).resize(function() {
     checkScroll();
 });
 
+//======================================//
+//== Show submission success message ==//
+//====================================//
+
+var param = window.location.href.split('?')[1].split('#')[0].split('=');
+var formSubmitted = (param[0] == 'formSubmitted') && (param[1] == 'true');
+
+if (formSubmitted) {
+    $('.contact__text--default').toggleClass('contact__text--hidden');
+    $('.contact--submit-success__text').toggleClass('contact--submit-success__text--visible');
+}
+
 
   //===================================//
  //== Abort redirect on form submit ==//
 //===================================//
-$('#contact-form').on('submit', function(e) {
-   e.preventDefault();
-   $.post({
-       url: $(this).attr('action'),
-       data: $(this).serialize(),
-       beforeSend: function() {
-           $('#contact-form__submit').val('Sending...');
-       },
-       success: function(data) {
-           // $('.contact-form__overlay').addClass('contact-form__overlay--visible');
-           $('#contact-form__submit').val('Sent!');
-           $('#contact-form').each(function(){
-                this.reset();
-            });
-       }
-   });
-});
+// $('#contact-form').on('submit', function(e) {
+//    e.preventDefault();
+//    $.post({
+//        url: $(this).attr('action'),
+//        data: $(this).serialize(),
+//        beforeSend: function() {
+//            $('#contact-form__submit').val('Sending...');
+//        },
+//        success: function(data) {
+//            // $('.contact-form__overlay').addClass('contact-form__overlay--visible');
+//            $('#contact-form__submit').val('Sent!');
+//            $('#contact-form').each(function(){
+//                 this.reset();
+//             });
+//        }
+//    });
+// });
 
 });

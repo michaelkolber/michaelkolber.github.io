@@ -3,7 +3,7 @@
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGDLCXK');</script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     <title>Michael Kolber</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -93,8 +93,12 @@
 
     <section id="contact" class="contact">
         <h2 class="header header--subheader">Contact Me</h2>
-        <p class="contact__text">
+        <p class="contact__text contact__text--default">
             Just submit this form and I'll get back to you as soon as I can!
+        </p>
+
+        <p class="contact__text contact--submit-success__text">
+            Thanks for reaching out! I'll be in touch soon.
         </p>
 
         <div class="contact-form-wrapper">
@@ -102,6 +106,7 @@
                 <input class="contact-form__field" type="email" name="_replyto" placeholder="Your Email">
                 <input class="contact-form__field" name="_subject" placeholder="Subject">
                 <textarea  class="contact-form__field contact-form__field--textarea" name="message" placeholder="Message"></textarea>
+                <input type="hidden" name="_next" value="https://www.michaelkolber.com/?formSubmitted=true#contact" />
                 <input id="contact-form__submit" class="contact-form__submit" type="submit" value="Send">
             </form>
 <!--
