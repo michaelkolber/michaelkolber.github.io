@@ -1,3 +1,3 @@
-## My personal website.
+## My website.
 
 Site: [https://www.michaelkolber.com](https://michaelkolber.github.io)
