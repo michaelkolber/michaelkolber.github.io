@@ -1,7 +1,8 @@
 $(function() {
 
-// Sticky Menu
-window.onscroll = function() {checkScroll();};
+  //=====================//
+ //==== Sticky Menu ====//
+//=====================//
 var header = document.getElementById('nav');
 var offset = header.offsetTop;
 
@@ -13,13 +14,24 @@ function checkScroll() {
     }
 }
 
+$(window).scroll(checkScroll); // Add an event listener
+checkScroll(); // Execute on page load in case the user loads on the middle of the page
 
-// Abort redirect on form submit
+// Re-adjust the offset when the user zooms or resizes the window
+$(window).resize(function() {
+    header.classList.remove('nav--sticky');
+    offset = header.offsetTop;
+    checkScroll();
+});
+
+
+  //===================================//
+ //== Abort redirect on form submit ==//
+//===================================//
 $('#contact-form').on('submit', function(e) {
    e.preventDefault();
-   $.ajax({
+   $.post({
        url: $(this).attr('action'),
-       type: 'POST',
        data: $(this).serialize(),
        beforeSend: function() {
            $('#contact-form__submit').val('Sending...');

@@ -27,7 +27,18 @@ section,
 .limit-width {
     margin: 0 auto;
     max-width: 37rem;
-    padding: 2rem .5rem;
+    padding: 3rem .5rem 1rem;
+}
+
+a {
+    color: inherit;
+    padding: .575rem 0;
+    text-decoration-color: #7cbeff;
+    transition: color .2s;
+
+    &:hover {
+        color: #7cbeff;
+    }
 }
 
 
@@ -75,13 +86,21 @@ section,
         color: $secondary;
     }
 
+    &__linebreak {
+        display: none;
+
+        @include mq($bp-lg) {
+            display: initial;
+        }
+    }
+
     &--subheader {
-        margin-bottom: 0;
+        margin: 1rem 0 0;
         text-decoration: underline;
         text-decoration-color: $secondary;
     }
 
-    &--small-header {
+    &--small {
         color: $secondary;
         font-size: 1rem;
         text-align: left;
@@ -142,13 +161,14 @@ section,
     }
 
     &__item {
-        color: inherit;
         padding: 1.125rem;
-        text-decoration-color: #7cbeff;
-        transition: color .2s;
 
-        &:hover {
-            color: #7cbeff;
+        @include mq($bp-md) {
+            padding: 1.125rem .5625rem;
+        }
+
+        @include mq($bp-sm) {
+            padding: 1.125rem .25rem;
         }
     }
 }
@@ -198,6 +218,7 @@ section,
         &-wrapper {
             color: inherit;
             display: block;
+            margin: 0 .5rem;
             text-decoration: none;
             width: 320px; // sass-lint:disable-line property-units
         }
@@ -323,4 +344,19 @@ section,
     //         vertical-align: middle;
     //     }
     // }
+}
+
+.linkedin-shoutout {
+    text-align: center;
+}
+
+.footer {
+    background-color: $primary;
+    color: white;
+    min-height: 2rem;
+    padding: 1rem;
+
+    &__text {
+        text-align: right;
+    }
 }

@@ -1,6 +1,6 @@
 @mixin mq($breakpoint) {
     @media (max-width: $breakpoint) {
-        @conent
+        @content;
     }
 }
 
