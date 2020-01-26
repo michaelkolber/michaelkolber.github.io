@@ -470,6 +470,9 @@ a {
 .language--redis {
   color: #ca261c; }
 
+.language--postgres {
+  color: #336791; }
+
 .language--vba {
   color: #945db7; }
 
